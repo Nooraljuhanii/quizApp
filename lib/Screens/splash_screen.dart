@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Screens/login_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
@@ -33,7 +34,7 @@ class SplashScreen extends StatelessWidget {
             Text(
               "ITI Quiz App",
               style: GoogleFonts.lato(
-               textStyle: TextStyle(fontSize: 25,color: Colors.amber, fontWeight: FontWeight.bold))
+               textStyle: TextStyle(fontSize: 25,color: const Color.fromARGB(255, 130, 72, 243), fontWeight: FontWeight.bold))
             ),
               SizedBox(
                 height: 10,
@@ -41,7 +42,7 @@ class SplashScreen extends StatelessWidget {
             Text(
               "We are Cerative, Enjoy our App",
               style: GoogleFonts.craftyGirls(
-              textStyle: TextStyle(fontSize: 22,color: Colors.amber, fontWeight: FontWeight.w500),
+              textStyle: TextStyle(fontSize: 20,color: Color.fromARGB(255, 130, 72, 243), fontWeight: FontWeight.w500),
             )), 
             Spacer(),
 
@@ -49,14 +50,20 @@ class SplashScreen extends StatelessWidget {
               width: (MediaQuery.of(context).size.width)*1/2,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(255, 115, 15, 132)
+                  backgroundColor: Color.fromARGB(255, 151, 212, 233)
                 ),
-                onPressed: (){}, 
+                onPressed: (){
+
+                  Navigator.push(context, MaterialPageRoute<void>(
+                    builder: (BuildContext context) => LoginScreen(),
+                  ),
+                  );
+                }, 
                 child: Text(
                   "Start",
-                   style: TextStyle( fontSize: 18, color: Colors.amber),
+                   style: TextStyle( fontSize: 18, color: Color.fromARGB(255, 130, 72, 243),
                   )),
-            )
+            ))
            ],
           ),
    
