@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Data/app_questions_and_answers.dart';
 import 'package:flutter_application_1/Screens/question_screen.dart';
 
 class CategoryScreen extends StatelessWidget {
+  const CategoryScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/quiz_background.jpg"),
             fit: BoxFit.cover,
@@ -19,8 +22,8 @@ class CategoryScreen extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              SizedBox(height: 250),
-              Center(
+              const SizedBox(height: 250),
+              const Center(
                 child: Text(
                   "Choose Quiz Type You want ",
                   textAlign: TextAlign.center,
@@ -32,35 +35,42 @@ class CategoryScreen extends StatelessWidget {
                 ),
               ),
 
-               SizedBox(height: 40),
+               const SizedBox(height: 40),
               categoryButton(
                 text: "Programming",
                 color: Colors.blue,
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute<void>(
-                    builder: (BuildContext context) => QuestionScreen(),
+                    builder: (BuildContext context) => QuestionScreen(
+                      questions : QuestionsAnswers.programmingQuestionsAndAnswers,
+                    ),
                   ),
                   );
                 }
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
+              
               categoryButton(
                 text: "Data Science",
                 color: Colors.green,
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute<void>(
-                    builder: (BuildContext context) => QuestionScreen(),
+                    builder: (BuildContext context) => QuestionScreen(
+                      questions: QuestionsAnswers.dataScienceQuestionsAndAnswers,
+                    ),
                   ),
                   );
                 },
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               categoryButton(
                 text: "Cybersecurity",
                 color: Colors.amber,
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute<void>(
-                    builder: (BuildContext context) => QuestionScreen(),
+                    builder: (BuildContext context) => QuestionScreen(
+                      questions: QuestionsAnswers.cybersecurityQuestionsAndAnswers,
+                    ),
                   ),
                   );
                 },
@@ -79,13 +89,13 @@ class CategoryScreen extends StatelessWidget {
     }) {
       return ElevatedButton(
         onPressed: onPressed,
-        child: Text(
-          text,
-          style: TextStyle(fontSize: 20, color: Colors.white),
-        ),
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all<Color>(color),
-          minimumSize: MaterialStateProperty.all<Size>(Size(250, 50)),
+          minimumSize: MaterialStateProperty.all<Size>(const Size(250, 50)),
+        ),
+        child: Text(
+          text,
+          style: const TextStyle(fontSize: 20, color: Colors.white),
         ),
       );
     }

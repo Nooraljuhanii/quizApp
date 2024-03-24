@@ -10,8 +10,8 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
        body: Container(
-        padding: EdgeInsets.all(12),
-    decoration: BoxDecoration(
+        padding: const EdgeInsets.all(12),
+    decoration: const BoxDecoration(
         image: DecorationImage(
                 image: AssetImage("assets/quiz_background.jpg"),
                 fit: BoxFit.fill )),
@@ -32,25 +32,27 @@ class SplashScreen extends StatelessWidget {
                 width: 150,
                 ),
             Text(
-              "ITI Quiz App",
+              "Computer Scince \n         Quiz App",
               style: GoogleFonts.lato(
-               textStyle: TextStyle(fontSize: 25,color: const Color.fromARGB(255, 130, 72, 243), fontWeight: FontWeight.bold))
+               textStyle: const TextStyle(fontSize: 25,color: Color.fromARGB(255, 130, 72, 243), fontWeight: FontWeight.bold))
             ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
             Text(
               "We are Cerative, Enjoy our App",
               style: GoogleFonts.craftyGirls(
-              textStyle: TextStyle(fontSize: 20,color: Color.fromARGB(255, 130, 72, 243), fontWeight: FontWeight.w500),
-            )), 
-            Spacer(),
+              textStyle: const TextStyle(fontSize: 20,
+              color: Color.fromARGB(255, 130, 72, 243), 
+              fontWeight: FontWeight.w900),
+            )),
+            const Spacer(),
 
             SizedBox(
               width: (MediaQuery.of(context).size.width)*1/2,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(255, 151, 212, 233)
+                  backgroundColor: const Color.fromARGB(255, 130, 72, 243),
                 ),
                 onPressed: (){
 
@@ -59,9 +61,11 @@ class SplashScreen extends StatelessWidget {
                   ),
                   );
                 }, 
-                child: Text(
+                child: const Text(
                   "Start",
-                   style: TextStyle( fontSize: 18, color: Color.fromARGB(255, 130, 72, 243),
+                   style: TextStyle( 
+                    fontSize: 20, fontWeight: FontWeight.w900,
+                    color: Color.fromARGB(255, 151, 212, 233), 
                   )),
             ))
            ],
